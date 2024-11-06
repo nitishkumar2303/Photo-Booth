@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        <div class="nav mb-10">
+            <a class="text-blue-500" href="/read">Read</a>
+        </div>
+
+        <h1 class="text-3xl tracking-tighter mb-3">Edit User</h1>
+        
+        <!-- Read-only section for previous user details -->
+        <h2 class="text-xl mb-2">Previous Details</h2>
+        <input class="px-5 py-2 border-2 bg-zinc-800 border-zinc-700 outline-none rounded-lg mb-3" type="text" value="<%= user.name  %>" readonly>
+        <input class="px-5 py-2 border-2 bg-zinc-800 border-zinc-700 outline-none rounded-lg mb-3" type="text" value="<%= user.email  %>" readonly>
+        <input class="px-5 py-2 border-2 bg-zinc-800 border-zinc-700 outline-none rounded-lg mb-3" type="text" value="<%= user.image  %>" readonly>
+
+        <!-- Form for new user details -->
+        <h2 class="text-xl mt-5 mb-2">New Details</h2>
+        <form action="/edit/<%= user._id  %>" method="post">
+            <input class="px-5 py-2 border-2 bg-zinc-900 border-zinc-800 outline-none rounded-lg mb-3" type="text" name="name" placeholder="New Name" >
+            <input class="px-5 py-2 border-2 bg-zinc-900 border-zinc-800 outline-none rounded-lg mb-3" type="text" name="email" placeholder="New Email" >
+            <input class="px-5 py-2 border-2 bg-zinc-900 border-zinc-800 outline-none rounded-lg mb-3" type="text" name="image" placeholder="New Image URL" >
+            <input class="px-5 py-2 bg-blue-500 rounded-lg ml-3 mt-5 cursor-pointer" type="submit" value="Update User">
+        </form>
+    </div>
+</body>
+
+</html>
